@@ -132,7 +132,6 @@ var digit = [
                 [0, 0, 0, 0]
             ] //:
         ];
-        var colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];
         var clock=document.getElementById('clock');
         var context=clock.getContext('2d');
         var sWidth=220,sHeight=60;
@@ -162,7 +161,6 @@ var digit = [
 						context.arc(index+toLeft+2*j*(r+1)+r+1,toTop+2*i*(r+1)+r+1,r,0,2*Math.PI);
 						context.closePath();
 						context.fillStyle='rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
-                        // colors[Math.round(Math.random()*(colors.length-1))];
 						context.fill();
 					}
         		}
