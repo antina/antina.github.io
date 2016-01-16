@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hello World | 点点飞</title>
+  <title>实现图片水平垂直居中 | 点点飞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="水平居中1img&amp;#123;display:block;margin:0 auto&amp;#125;
+垂直居中用js实现12345var oDiv=document.getElementById(&apos;div1&apos;);var oImg=document.getElementById(&apos;img1&apos;);var divHeight=oDiv.offsetHeight;var imgHeight=oImg.offse">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://antina.github.io/201509/hello-world/index.html">
+<meta property="og:title" content="实现图片水平垂直居中">
+<meta property="og:url" content="http://antina.github.io/201509/图片水平垂直居中/index.html">
 <meta property="og:site_name" content="点点飞">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-01-16T07:40:03.000Z">
+<meta property="og:description" content="水平居中1img&amp;#123;display:block;margin:0 auto&amp;#125;
+垂直居中用js实现12345var oDiv=document.getElementById(&apos;div1&apos;);var oImg=document.getElementById(&apos;img1&apos;);var divHeight=oDiv.offsetHeight;var imgHeight=oImg.offse">
+<meta property="og:updated_time" content="2016-01-16T09:42:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="实现图片水平垂直居中">
+<meta name="twitter:description" content="水平居中1img&amp;#123;display:block;margin:0 auto&amp;#125;
+垂直居中用js实现12345var oDiv=document.getElementById(&apos;div1&apos;);var oImg=document.getElementById(&apos;img1&apos;);var divHeight=oDiv.offsetHeight;var imgHeight=oImg.offse">
   
     <link rel="alternative" href="/atom.xml" title="点点飞" type="application/atom+xml">
   
@@ -200,11 +200,11 @@ Quick">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-图片水平垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201509/hello-world/" class="article-date">
-  	<time datetime="2015-09-12T03:56:32.000Z" itemprop="datePublished">2015-09-12</time>
+      <a href="/201509/图片水平垂直居中/" class="article-date">
+  	<time datetime="2015-09-14T14:09:41.000Z" itemprop="datePublished">2015-09-14</time>
 </a>
     </div>
   
@@ -217,7 +217,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      实现图片水平垂直居中
     </h1>
   
 
@@ -225,6 +225,10 @@ Quick">
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/css/">css</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -233,15 +237,10 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="u6C34_u5E73_u5C45_u4E2D"><a href="#u6C34_u5E73_u5C45_u4E2D" class="headerlink" title="水平居中"></a>水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">img</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;<span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> auto</span></span></span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u5782_u76F4_u5C45_u4E2D_u7528js_u5B9E_u73B0"><a href="#u5782_u76F4_u5C45_u4E2D_u7528js_u5B9E_u73B0" class="headerlink" title="垂直居中用js实现"></a>垂直居中用js实现</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv=<span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</span><br><span class="line"><span class="keyword">var</span> oImg=<span class="built_in">document</span>.getElementById(<span class="string">'img1'</span>);</span><br><span class="line"><span class="keyword">var</span> divHeight=oDiv.offsetHeight;</span><br><span class="line"><span class="keyword">var</span> imgHeight=oImg.offsetHeight;</span><br><span class="line">oImg.style.marginTop=(divHeight-imgHeight)/<span class="number">2</span>+<span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="u5782_u76F4_u5C45_u4E2D_u7528css_u5B9E_u73B0_u65B9_u6CD5_u4E00"><a href="#u5782_u76F4_u5C45_u4E2D_u7528css_u5B9E_u73B0_u65B9_u6CD5_u4E00" class="headerlink" title="垂直居中用css实现方法一"></a>垂直居中用css实现方法一</h3><p>.box{display:table-cell; verticle-align:middle;}</p>
+<h3 id="u5782_u76F4_u5C45_u4E2D_u7528css_u5B9E_u73B0_u65B9_u6CD5_u4E8C"><a href="#u5782_u76F4_u5C45_u4E2D_u7528css_u5B9E_u73B0_u65B9_u6CD5_u4E8C" class="headerlink" title="垂直居中用css实现方法二"></a>垂直居中用css实现方法二</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.box</span><span class="rules">&#123;<span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;&#125;</span></span><br><span class="line"><span class="class">.img</span><span class="rules">&#123;<span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;<span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50%</span></span></span>;<span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">translateY</span>(-<span class="number">50%</span>)</span></span>;&#125;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -251,15 +250,20 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/201509/onload与Jquery_ready函数的区别/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/201509/js与jquery的ajax请求/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          window.onload与$(document).ready()区别
+          js与jquery的ajax请求
         
       </div>
     </a>
   
+  
+    <a href="/201509/onload与Jquery_ready函数的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">window.onload与$(document).ready()区别</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -292,7 +296,7 @@ Quick">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="http://antina.github.io/201509/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="图片水平垂直居中" data-title="实现图片水平垂直居中" data-url="http://antina.github.io/201509/图片水平垂直居中/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
