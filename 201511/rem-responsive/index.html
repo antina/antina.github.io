@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>《三体3》小记 | 点点飞</title>
+  <title>rem实现响应式布局 | 点点飞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="看完《三体3》，心情久久不能平复。对宇宙命运的无能为力，对世界基本规律的怀疑和迷惑，对小人物命运无常的万千感慨，沧海一粟，心中充满生命最底层的渺小感，一切归于平寂前，你是怎样的希冀喧哗惶惑，而永远来不及看清楚这个世界。他曾送你一颗星星，然后送你一个宇宙，而时间和空间将你们拉得好远好远，最初的走散后再未谋面，直到相隔无数亿年的距离。是眼里现实世界的变幻更加不可理喻，还是心中巨大的无奈与遗憾更加沉重？">
+  <meta name="description" content="rem和em单位一样，都是一个相对单位,不同的是 em 是相对于他们最终获得的字体大小font-size进行计算,rem是相对于根元素html的font-size进行计算,这样一来rem就绕开了复杂的层级关系。rem可以从浏览器字体设置中继承字体大小，默认情况下浏览器给的字体大小是16px，按照转化关系 16px = 1rem；使用rem布局的时候,为了兼容不同的分辨率,我们应该要动态的修正根字体">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《三体3》小记">
-<meta property="og:url" content="http://antina.github.io/201105/santi3/index.html">
+<meta property="og:title" content="rem实现响应式布局">
+<meta property="og:url" content="http://antina.github.io/201511/rem-responsive/index.html">
 <meta property="og:site_name" content="点点飞">
-<meta property="og:description" content="看完《三体3》，心情久久不能平复。对宇宙命运的无能为力，对世界基本规律的怀疑和迷惑，对小人物命运无常的万千感慨，沧海一粟，心中充满生命最底层的渺小感，一切归于平寂前，你是怎样的希冀喧哗惶惑，而永远来不及看清楚这个世界。他曾送你一颗星星，然后送你一个宇宙，而时间和空间将你们拉得好远好远，最初的走散后再未谋面，直到相隔无数亿年的距离。是眼里现实世界的变幻更加不可理喻，还是心中巨大的无奈与遗憾更加沉重？">
-<meta property="og:updated_time" content="2016-01-16T15:21:48.000Z">
+<meta property="og:description" content="rem和em单位一样，都是一个相对单位,不同的是 em 是相对于他们最终获得的字体大小font-size进行计算,rem是相对于根元素html的font-size进行计算,这样一来rem就绕开了复杂的层级关系。rem可以从浏览器字体设置中继承字体大小，默认情况下浏览器给的字体大小是16px，按照转化关系 16px = 1rem；使用rem布局的时候,为了兼容不同的分辨率,我们应该要动态的修正根字体">
+<meta property="og:updated_time" content="2016-01-17T06:26:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《三体3》小记">
-<meta name="twitter:description" content="看完《三体3》，心情久久不能平复。对宇宙命运的无能为力，对世界基本规律的怀疑和迷惑，对小人物命运无常的万千感慨，沧海一粟，心中充满生命最底层的渺小感，一切归于平寂前，你是怎样的希冀喧哗惶惑，而永远来不及看清楚这个世界。他曾送你一颗星星，然后送你一个宇宙，而时间和空间将你们拉得好远好远，最初的走散后再未谋面，直到相隔无数亿年的距离。是眼里现实世界的变幻更加不可理喻，还是心中巨大的无奈与遗憾更加沉重？">
+<meta name="twitter:title" content="rem实现响应式布局">
+<meta name="twitter:description" content="rem和em单位一样，都是一个相对单位,不同的是 em 是相对于他们最终获得的字体大小font-size进行计算,rem是相对于根元素html的font-size进行计算,这样一来rem就绕开了复杂的层级关系。rem可以从浏览器字体设置中继承字体大小，默认情况下浏览器给的字体大小是16px，按照转化关系 16px = 1rem；使用rem布局的时候,为了兼容不同的分辨率,我们应该要动态的修正根字体">
   
     <link rel="alternative" href="/atom.xml" title="点点飞" type="application/atom+xml">
   
@@ -191,11 +191,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-santi3" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-rem-responsive" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201105/santi3/" class="article-date">
-  	<time datetime="2011-05-26T14:30:25.000Z" itemprop="datePublished">2011-05-26</time>
+      <a href="/201511/rem-responsive/" class="article-date">
+  	<time datetime="2015-11-09T06:24:27.000Z" itemprop="datePublished">2015-11-09</time>
 </a>
     </div>
   
@@ -208,7 +208,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      《三体3》小记
+      rem实现响应式布局
     </h1>
   
 
@@ -217,7 +217,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/css/">css</a></li></ul>
 	</div>
 
         
@@ -228,7 +228,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>看完《三体3》，心情久久不能平复。<br>对宇宙命运的无能为力，对世界基本规律的怀疑和迷惑，对小人物命运无常的万千感慨，沧海一粟，心中充满生命最底层的渺小感，一切归于平寂前，你是怎样的希冀喧哗惶惑，而永远来不及看清楚这个世界。<br>他曾送你一颗星星，然后送你一个宇宙，而时间和空间将你们拉得好远好远，最初的走散后再未谋面，直到相隔无数亿年的距离。<br>是眼里现实世界的变幻更加不可理喻，还是心中巨大的无奈与遗憾更加沉重？当你与别人在没有她的世界重建一个文明，平凡的日子里有过思念么？而她在未知的未来面前，该怎样延续你们有幸一同见证过的曾经的宇宙的故事？她背负一次次重任，却最终将太阳系毁灭掉，变成针眼画师笔下的二维世界，而在浩荡的时空里，这又算什么？跨越几个世纪与几亿年的流光，你不只是为了等待与他重逢，而当身旁陪伴你的却不是也不可能再是他时，模糊的惆怅具体代表着什么？<br>这一刻，记忆臃肿而空茫，繁复的岁月开始显得拖沓。<br>而为了弄明白所有宇宙真相曾经努力过的人们，他们思想发出的呼喊在浩渺的时空里激荡，成为永远无法被解读的无望。<br>这个世界，太多的期盼被时空掩埋。如果可以，我猜，你一定只想懵懂地过完平凡的一生。</p>
+        <p>rem和em单位一样，都是一个相对单位,不同的是 em 是相对于他们最终获得的字体大小font-size进行计算,rem是相对于根元素html的font-size进行计算,这样一来rem就绕开了复杂的层级关系。rem可以从浏览器字体设置中继承字体大小，默认情况下浏览器给的字体大小是16px，按照转化关系 16px = 1rem；<br>使用rem布局的时候,为了兼容不同的分辨率,我们应该要动态的修正根字体的大小,让所有的用rem单位的子元素跟着一起缩放,在媒体查询中也使用 rem 单位，从而达到自适应的效果。一般情况在项目的最前面加载一段js来修改html的font-size，针对不同分辨率计算font-size，监听浏览器更改 html的font-size：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">doc, win</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> docEl = doc.documentElement,</span><br><span class="line">    resizeEvt = <span class="string">'orientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>,</span><br><span class="line">    recalc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> clientWidth = docEl.clientWidth;</span><br><span class="line">      <span class="keyword">if</span> (!clientWidth) <span class="keyword">return</span>;</span><br><span class="line">      <span class="comment">//设置根字体大小</span></span><br><span class="line">      docEl.style.fontSize = <span class="number">100</span> * (clientWidth / <span class="number">320</span>) + <span class="string">'px'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">  <span class="keyword">if</span> (!doc.addEventListener) <span class="keyword">return</span>;</span><br><span class="line">     <span class="comment">//绑定浏览器缩放与加载时间</span></span><br><span class="line">  win.addEventListener(resizeEvt, recalc, <span class="literal">false</span>);</span><br><span class="line">  doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, recalc, <span class="literal">false</span>);</span><br><span class="line">&#125;)(<span class="built_in">document</span>, <span class="built_in">window</span>);</span><br></pre></td></tr></table></figure></p>
+<p>rem可理解为”root em”, CSS3新加属性，chrome/firefox/IE9+支持。<br>需注意chrome强制最小字体为12号，即使设置成 10px 最终都会显示成 12px，当把html的font-size设置成10px,子节点rem的计算还是以12px为基准。</p>
 
       
     </div>
@@ -238,15 +239,11 @@
     
 <nav id="article-nav">
   
-    <a href="/201402/a-letter-for-my-love/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          A Letter for My Love
-        
-      </div>
-    </a>
   
+    <a href="/201510/require-logic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nodejs的require逻辑</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -279,7 +276,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="santi3" data-title="《三体3》小记" data-url="http://antina.github.io/201105/santi3/"></div>
+	<div class="ds-thread" data-thread-key="rem-responsive" data-title="rem实现响应式布局" data-url="http://antina.github.io/201511/rem-responsive/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
