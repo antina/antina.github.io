@@ -4,24 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>window.onload与$(document).ready()区别 | 点点飞</title>
+  <title>h5手机摇一摇效果 | 点点飞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="执行时间window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕
-编写个数不同window.onload不能同时编写多个，如果有多个window.onload方法，只会$(document).ready()可以同时编写多个，并且都可以得到执行
-简化写法window.onload没有简化写法$(d">
+  <meta name="description" content="HTML5 DOM事件devicemotion提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标,还提供了设备在坐标系中的自转速率。1234567891011121314151617181920212223242526272829var shake = 4000,    last_update = 0,    x = y = z = last_x = last_y = last_z =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="window.onload与$(document).ready()区别">
-<meta property="og:url" content="http://antina.github.io/201509/onload-Jquery_ready-diff/index.html">
+<meta property="og:title" content="h5手机摇一摇效果">
+<meta property="og:url" content="http://antina.github.io/201511/devicemotion-shake/index.html">
 <meta property="og:site_name" content="点点飞">
-<meta property="og:description" content="执行时间window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕
-编写个数不同window.onload不能同时编写多个，如果有多个window.onload方法，只会$(document).ready()可以同时编写多个，并且都可以得到执行
-简化写法window.onload没有简化写法$(d">
-<meta property="og:updated_time" content="2016-01-16T14:47:03.000Z">
+<meta property="og:description" content="HTML5 DOM事件devicemotion提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标,还提供了设备在坐标系中的自转速率。1234567891011121314151617181920212223242526272829var shake = 4000,    last_update = 0,    x = y = z = last_x = last_y = last_z =">
+<meta property="og:updated_time" content="2016-01-17T07:17:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="window.onload与$(document).ready()区别">
-<meta name="twitter:description" content="执行时间window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕
-编写个数不同window.onload不能同时编写多个，如果有多个window.onload方法，只会$(document).ready()可以同时编写多个，并且都可以得到执行
-简化写法window.onload没有简化写法$(d">
+<meta name="twitter:title" content="h5手机摇一摇效果">
+<meta name="twitter:description" content="HTML5 DOM事件devicemotion提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标,还提供了设备在坐标系中的自转速率。1234567891011121314151617181920212223242526272829var shake = 4000,    last_update = 0,    x = y = z = last_x = last_y = last_z =">
   
     <link rel="alternative" href="/atom.xml" title="点点飞" type="application/atom+xml">
   
@@ -197,11 +191,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-onload-Jquery_ready-diff" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-devicemotion-shake" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201509/onload-Jquery_ready-diff/" class="article-date">
-  	<time datetime="2015-09-13T06:38:17.000Z" itemprop="datePublished">2015-09-13</time>
+      <a href="/201511/devicemotion-shake/" class="article-date">
+  	<time datetime="2015-11-27T14:13:06.000Z" itemprop="datePublished">2015-11-27</time>
 </a>
     </div>
   
@@ -214,7 +208,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      window.onload与$(document).ready()区别
+      h5手机摇一摇效果
     </h1>
   
 
@@ -223,7 +217,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/js/">js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/html5/">html5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/js/">js</a></li></ul>
 	</div>
 
         
@@ -234,9 +228,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="u6267_u884C_u65F6_u95F4"><a href="#u6267_u884C_u65F6_u95F4" class="headerlink" title="执行时间"></a>执行时间</h3><p><code>window.onload</code>必须等到页面内包括图片的所有元素加载完毕后才能执行<br><code>$(document).ready()</code>是DOM结构绘制完毕后就执行，不必等到加载完毕</p>
-<h3 id="u7F16_u5199_u4E2A_u6570_u4E0D_u540C"><a href="#u7F16_u5199_u4E2A_u6570_u4E0D_u540C" class="headerlink" title="编写个数不同"></a>编写个数不同</h3><p><code>window.onload</code>不能同时编写多个，如果有多个<code>window.onload</code>方法，只会<br><code>$(document).ready()</code>可以同时编写多个，并且都可以得到执行</p>
-<h3 id="u7B80_u5316_u5199_u6CD5"><a href="#u7B80_u5316_u5199_u6CD5" class="headerlink" title="简化写法"></a>简化写法</h3><p>window.onload没有简化写法<br><code>$(document).ready(function(){})</code>可以简写成<code>$(function(){})</code></p>
+        <p>HTML5 DOM事件devicemotion提供设备的加速信息，表示为定义在设备上的坐标系中的卡尔迪坐标,还提供了设备在坐标系中的自转速率。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> shake = <span class="number">4000</span>,</span><br><span class="line">    last_update = <span class="number">0</span>,</span><br><span class="line">    x = y = z = last_x = last_y = last_z = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.DeviceMotionEvent) &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"devicemotion"</span>, deviceMotionHandler, <span class="literal">false</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"本设备不支持devicemotion事件"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deviceMotionHandler</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//捕捉重力加速度</span></span><br><span class="line">    <span class="keyword">var</span> acceleration = ev.accelerationIncludingGravity,</span><br><span class="line">        currTime = <span class="keyword">new</span> <span class="built_in">Date</span>().valueOf(),</span><br><span class="line">        diffTime = currTime - last_update;</span><br><span class="line">    <span class="keyword">if</span> (diffTime &gt; <span class="number">200</span>) &#123;</span><br><span class="line">        last_update = currTime;</span><br><span class="line">        x = acceleration.x;</span><br><span class="line">        y = acceleration.y;</span><br><span class="line">        z = acceleration.z;</span><br><span class="line">        <span class="keyword">var</span> speed = <span class="built_in">Math</span>.abs(x + y + z - last_x - last_y - last_z) / diffTime * <span class="number">10000</span></span><br><span class="line">        <span class="keyword">if</span> (speed &gt; shake) &#123;</span><br><span class="line">            alert(<span class="string">'shaked'</span>);</span><br><span class="line">            <span class="comment">//do sth.</span></span><br><span class="line">        &#125;</span><br><span class="line">        last_x = x;</span><br><span class="line">        last_y = y;</span><br><span class="line">        last_z = z;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -246,18 +238,9 @@
     
 <nav id="article-nav">
   
-    <a href="/201509/img-center/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          实现图片水平垂直居中
-        
-      </div>
-    </a>
   
-  
-    <a href="/201509/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/201511/rem-responsive/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">rem实现响应式布局</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -292,7 +275,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="onload-Jquery_ready-diff" data-title="window.onload与$(document).ready()区别" data-url="http://antina.github.io/201509/onload-Jquery_ready-diff/"></div>
+	<div class="ds-thread" data-thread-key="devicemotion-shake" data-title="h5手机摇一摇效果" data-url="http://antina.github.io/201511/devicemotion-shake/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
