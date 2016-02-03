@@ -192,11 +192,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-FCC-truncate-a-string" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-FCC-where-do-i-belong" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201601/FCC-truncate-a-string/" class="article-date">
-  	<time datetime="2016-01-25T10:28:12.000Z" itemprop="datePublished">2016-01-25</time>
+      <a href="/201601/FCC-where-do-i-belong/" class="article-date">
+  	<time datetime="2016-01-25T13:20:47.000Z" itemprop="datePublished">2016-01-25</time>
 </a>
     </div>
   
@@ -209,7 +209,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/201601/FCC-truncate-a-string/">Truncate a string</a>
+      <a class="article-title" href="/201601/FCC-where-do-i-belong/">Where do I belong</a>
     </h1>
   
 
@@ -218,7 +218,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(str.length&gt;num)&#123;</span><br><span class="line">      <span class="keyword">if</span>(num&gt;<span class="number">3</span>)&#123;</span><br><span class="line">          str=str.slice(<span class="number">0</span>,num-<span class="number">3</span>)+<span class="string">'...'</span>;</span><br><span class="line">        </span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          str=str.slice(<span class="number">0</span>,num)+<span class="string">'...'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> str;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">truncate(<span class="string">"A-tisket a-tasket A green and yellow basket"</span>, <span class="number">11</span>);</span><br></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">where</span>(<span class="params">arr, num</span>) </span>&#123;</span><br><span class="line">    arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> a-b;</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">var</span> j=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(num&gt;arr[i])&#123;</span><br><span class="line">      j=i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">where([<span class="number">40</span>, <span class="number">60</span>], <span class="number">50</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -528,6 +528,62 @@
 
 
   
+    <article id="post-FCC-truncate-a-string" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/201601/FCC-truncate-a-string/" class="article-date">
+  	<time datetime="2016-01-25T10:28:12.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/201601/FCC-truncate-a-string/">Truncate a string</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(str.length&gt;num)&#123;</span><br><span class="line">      <span class="keyword">if</span>(num&gt;<span class="number">3</span>)&#123;</span><br><span class="line">          str=str.slice(<span class="number">0</span>,num-<span class="number">3</span>)+<span class="string">'...'</span>;</span><br><span class="line">        </span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          str=str.slice(<span class="number">0</span>,num)+<span class="string">'...'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> str;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">truncate(<span class="string">"A-tisket a-tasket A green and yellow basket"</span>, <span class="number">11</span>);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/FreeCodeCamp/">FreeCodeCamp</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-FCC-return-largest-numbers-in-arrays" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -696,76 +752,9 @@
 
 
   
-    <article id="post-2015-summary" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/201601/2015-summary/" class="article-date">
-  	<time datetime="2016-01-11T16:09:00.000Z" itemprop="datePublished">2016-01-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/201601/2015-summary/">2015-2016总结与计划</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>工作加上自学的时间，入行前端开发也就差不多半年，趁着新年伊始，就以最喜闻乐见的“回首过去-立足现在-展望未来”的思路记个小小的流水账吧。</p>
-<p>大学毕业的时候曾写过一个十年规划，把关于工作关于婚姻的各种可能性都写了进去，但没多久就发现意外“躺枪”怀孕了，于是计划全部推翻，工作不到一个月就辞职，回归嫁人养胎生娃的群众路线，人生真是抓马。</p>
-<p>之后重新工作，在英语编辑，外贸接单，外企行政，SEO等各种岗位打了一通酱油后，发现过得并不开心，比如外贸接单，大家有什么资源都藏着掖着，根本不交流，很不痛快；比如行政，工资瓶颈不谈，整天各种琐碎忙个不停感觉自己就一打杂的，还有看不见的办公室政治；比如SEO，由于搜索引擎规则的不明确和优化周期的冗长，总觉得受制于人，觉得自己干了事儿没得到及时回报，还要疲于应付各种客户的无理刁难，心累。</p>
-<p>还好家有勤勤恳恳耕地的老牛能保我衣食无忧，让我享受干得不爽就辞职走人的任性。闲下来恶补了各种电影美剧，没事儿就泡在各种贴吧论坛，<a href="http://askender.com/" target="_blank" rel="external">askender</a>这枚木讷的码农也经常让我坐在他旁边扮演小黄鸭，听他讲他的代码逻辑和穿插其中的人生理想。<br>一来二去，我对敲代码也产生了兴趣，这个职业更像是一门纯粹的手艺，专注自身技术就好，工作不用迎合任何人的脸色也不会搅进任何办公室政治，关键是所写即所得，毫无偏差，而且回报超快，实现一个想要的按钮效果或者修复一个bug都能轻松带来成就感，学习到一个新的知识点感觉像解锁了一项新技能，不断解决问题好像不断打怪升级，就这样玩儿游戏还能赚钱，还能有更好的职业选择吗，就是你了！</p>
-<p>最初我也有过怀疑和担心，毕竟文科出身还是女生还已经是妈妈还都毕业好几年了，会不会起步太晚？会不会干扰太多？转念一想，很多人一辈子都在混日子做着不喜欢的工作呢，我二十几岁就能找到自己喜欢并愿意一直干下去的事儿，应该算是一种幸运呀。如果说女生的逻辑思维能力普遍稍弱，那我就多付出一点时间总能弥补吧，况且“大部分人的努力程度之低是轮不到拼天赋的”。就算弥补不了，那我就做个级别稍低的助攻，反正做的是喜欢的事儿就好啦。</p>
-<p>看<a href="http://www.w3school.com.cn/" target="_blank" rel="external">W3C</a>的文档看累了，就去 <a href="/www.codecademy.com">Codecademy</a>上面实践，去<a href="http://www.imooc.com/" target="_blank" rel="external">慕课网</a>看视频教程，或者玩玩<a href="http://cn.codecombat.com/" target="_blank" rel="external">Codecombat</a>游戏练练手，没有正规军按部就班的修养，那就野蛮生长吧。</p>
-<p>不久就开始工作啦，第一份工作特别适合小白的我，做各种页面小游戏，不用涉及架构方面太深的东西，却可以很好地锻炼html&amp;css&amp;js基础，其间熟悉了jquery，熟悉了git命令行，踩了前端常见的一些坑，业余还学习了nodejs的语法，也算小有收获，开心。虽然后来因为一些原因辞职了，但心里还是很感激给我最初工作机会的叶X，给过我许多技术指导的相X和对我格外关照的小骨，每天省钱点外卖的他们离职当天还请我吃了大餐，感人有木有，过几天策划一下找个机会和他们聚一聚吧。</p>
-<p> 其间还折腾了一下自己的博客，起初是准备自己从零开始搭建，文章自动生成都用nodejs写好了，坑太多要兼顾的点太多还要架构还没有什么好的设计，而做好这些要花费很多时间，最终搁置了，经过比较最后选了目前的这个hexo，感觉用着也还不错，速度很快，等以后有更多时间和更多技能点了再自己搭着玩玩吧。</p>
-<p> 自学前端开发这么久，我发现这里面水还是很深的，基础要夯实，各种浏览器兼容性和设备千差万别需要兼顾，新技术和各种新的框架层出不穷，全部一手抓肯定多而不专，需要技术选型。<br> 所以接下来我打算在夯实html&amp;css&amp;js基础的同时，HTML5和CSS3肯定得深入研究，CSS预处理选定Sass，js库就选jquery，前端样式通用框架选bootstrap，后端选nodejs，混合app开发框架选angularjs&amp;ionic，这个就通过与askender协同开发<a href="http://yudi.fm" target="_blank" rel="external">雨滴</a>来实现，其他技术就作为了解吧。另外需要更加注重代码质量，让良好注释和更简洁的代码风格变成一种习惯。</p>
-<p> 技术之外，婆婆已经答应把宝宝带到上海，以后除了工作还要下班陪宝宝，所以需要制定合理的时间规划并严格执行。除去工作和家庭，心也要在路上，看书看电影听歌追美剧要雨露均沾才好。</p>
-<p> 念念不忘必有回响。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
