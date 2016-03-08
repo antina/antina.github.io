@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 15px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
+						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 15px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/typescript/" style="font-size: 10px;">typescript</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,64 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-some-mistakes-learning-typescript" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/201603/some-mistakes-learning-typescript/" class="article-date">
+  	<time datetime="2016-03-08T12:27:33.000Z" itemprop="datePublished">2016-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/201603/some-mistakes-learning-typescript/">typescript学习笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//in typescript</span></span><br><span class="line"><span class="keyword">var</span> list:any[];</span><br><span class="line">list[<span class="number">1</span>]=“haha”;<span class="comment">//error,list is undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//in javascript</span></span><br><span class="line"><span class="keyword">var</span> list;</span><br><span class="line">list[<span class="number">1</span>]=<span class="number">2</span>;<span class="comment">//error,list is undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str；</span><br><span class="line">str=“sdljf”；<span class="comment">//correct</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//enum in typescript</span></span><br><span class="line">enum Color&#123;</span><br><span class="line">	red=<span class="number">2</span>,</span><br><span class="line">	blue,</span><br><span class="line">	yellow,</span><br><span class="line">	grey=<span class="number">8</span>,</span><br><span class="line">	black</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Color.blue.toString());<span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(Color.black.toString());<span class="comment">//9</span></span><br><span class="line"><span class="built_in">console</span>.log(Color[<span class="number">4</span>]);<span class="comment">//yellow</span></span><br><span class="line"><span class="built_in">console</span>.log(Color[<span class="number">6</span>]);<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//super&amp;class in typescript</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;         </span><br><span class="line">	name: string;         </span><br><span class="line">	constructor(sname: string) &#123;<span class="keyword">this</span>.name = sname;&#125;; </span><br><span class="line">	moveBy(meters:number= <span class="number">5</span>)&#123;             </span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">" moved "</span> + meters + <span class="string">" m"</span>;  </span><br><span class="line">	&#125;     </span><br><span class="line">&#125;     </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Snake</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;         </span><br><span class="line">	constructor(name: string) &#123;<span class="keyword">super</span>(name);&#125; ;</span><br><span class="line"><span class="comment">//	moveBy(meters = 6) &#123; super.moveBy(meters); &#125; ; //error, no return</span></span><br><span class="line">	moveBy(meters = <span class="number">6</span>) &#123; <span class="keyword">return</span> <span class="keyword">super</span>.moveBy(meters); &#125; ;<span class="comment">//correct   </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/typescript/">typescript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-the-new-beginning" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -669,62 +727,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(str.length&gt;num)&#123;</span><br><span class="line">      <span class="keyword">if</span>(num&gt;<span class="number">3</span>)&#123;</span><br><span class="line">          str=str.slice(<span class="number">0</span>,num-<span class="number">3</span>)+<span class="string">'...'</span>;</span><br><span class="line">        </span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          str=str.slice(<span class="number">0</span>,num)+<span class="string">'...'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> str;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">truncate(<span class="string">"A-tisket a-tasket A green and yellow basket"</span>, <span class="number">11</span>);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/FreeCodeCamp/">FreeCodeCamp</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-FCC-title-case-a-sentence" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/201601/FCC-title-case-a-sentence/" class="article-date">
-  	<time datetime="2016-01-25T08:58:54.000Z" itemprop="datePublished">2016-01-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/201601/FCC-title-case-a-sentence/">Title Case a Sentence</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arr= str.toLowerCase().split(<span class="string">' '</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    arr[i]=arr[i].replace(arr[i].charAt(<span class="number">0</span>),arr[i].charAt(<span class="number">0</span>).toUpperCase());</span><br><span class="line">  &#125;</span><br><span class="line">  str=arr.join(<span class="string">' '</span>);</span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">titleCase(<span class="string">"I'm a little tea pot"</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     

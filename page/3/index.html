@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 15px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
+						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 15px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/typescript/" style="font-size: 10px;">typescript</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,65 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-onload-Jquery_ready-diff" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/201509/onload-Jquery_ready-diff/" class="article-date">
+  	<time datetime="2015-09-13T06:38:17.000Z" itemprop="datePublished">2015-09-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/201509/onload-Jquery_ready-diff/">window.onload与$(document).ready()区别</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="u6267_u884C_u65F6_u95F4"><a href="#u6267_u884C_u65F6_u95F4" class="headerlink" title="执行时间"></a>执行时间</h3><p><code>window.onload</code>必须等到页面内包括图片的所有元素加载完毕后才能执行<br><code>$(document).ready()</code>是DOM结构绘制完毕后就执行，不必等到加载完毕</p>
+<h3 id="u7F16_u5199_u4E2A_u6570_u4E0D_u540C"><a href="#u7F16_u5199_u4E2A_u6570_u4E0D_u540C" class="headerlink" title="编写个数不同"></a>编写个数不同</h3><p><code>window.onload</code>不能同时编写多个，如果有多个<code>window.onload</code>方法，只会<br><code>$(document).ready()</code>可以同时编写多个，并且都可以得到执行</p>
+<h3 id="u7B80_u5316_u5199_u6CD5"><a href="#u7B80_u5316_u5199_u6CD5" class="headerlink" title="简化写法"></a>简化写法</h3><p>window.onload没有简化写法<br><code>$(document).ready(function(){})</code>可以简写成<code>$(function(){})</code></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   

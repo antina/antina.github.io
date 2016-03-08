@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 15px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
+						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 15px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/typescript/" style="font-size: 10px;">typescript</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,62 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-FCC-title-case-a-sentence" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/201601/FCC-title-case-a-sentence/" class="article-date">
+  	<time datetime="2016-01-25T08:58:54.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/201601/FCC-title-case-a-sentence/">Title Case a Sentence</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arr= str.toLowerCase().split(<span class="string">' '</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    arr[i]=arr[i].replace(arr[i].charAt(<span class="number">0</span>),arr[i].charAt(<span class="number">0</span>).toUpperCase());</span><br><span class="line">  &#125;</span><br><span class="line">  str=arr.join(<span class="string">' '</span>);</span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">titleCase(<span class="string">"I'm a little tea pot"</span>);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/FreeCodeCamp/">FreeCodeCamp</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-FCC-return-largest-numbers-in-arrays" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -703,65 +759,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/css/">css</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-onload-Jquery_ready-diff" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/201509/onload-Jquery_ready-diff/" class="article-date">
-  	<time datetime="2015-09-13T06:38:17.000Z" itemprop="datePublished">2015-09-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/201509/onload-Jquery_ready-diff/">window.onload与$(document).ready()区别</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="u6267_u884C_u65F6_u95F4"><a href="#u6267_u884C_u65F6_u95F4" class="headerlink" title="执行时间"></a>执行时间</h3><p><code>window.onload</code>必须等到页面内包括图片的所有元素加载完毕后才能执行<br><code>$(document).ready()</code>是DOM结构绘制完毕后就执行，不必等到加载完毕</p>
-<h3 id="u7F16_u5199_u4E2A_u6570_u4E0D_u540C"><a href="#u7F16_u5199_u4E2A_u6570_u4E0D_u540C" class="headerlink" title="编写个数不同"></a>编写个数不同</h3><p><code>window.onload</code>不能同时编写多个，如果有多个<code>window.onload</code>方法，只会<br><code>$(document).ready()</code>可以同时编写多个，并且都可以得到执行</p>
-<h3 id="u7B80_u5316_u5199_u6CD5"><a href="#u7B80_u5316_u5199_u6CD5" class="headerlink" title="简化写法"></a>简化写法</h3><p>window.onload没有简化写法<br><code>$(document).ready(function(){})</code>可以简写成<code>$(function(){})</code></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/js/">js</a></li></ul>
 	</div>
 
       

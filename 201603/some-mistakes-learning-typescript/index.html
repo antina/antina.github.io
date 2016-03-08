@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>nodejs的require逻辑 | 点点飞</title>
+  <title>typescript学习笔记 | 点点飞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="12345678910//in typescriptvar list:any[];list[1]=“haha”;//error,list is undefined//in javascriptvar list;list[1]=2;//error,list is undefinedvar str；str=“sdljf”；//correct
+123456789101112//enum in types">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs的require逻辑">
-<meta property="og:url" content="http://antina.github.io/201510/require-logic/index.html">
+<meta property="og:title" content="typescript学习笔记">
+<meta property="og:url" content="http://antina.github.io/201603/some-mistakes-learning-typescript/index.html">
 <meta property="og:site_name" content="点点飞">
-<meta property="og:description">
-<meta property="og:image" content="http://antina.github.io/../images/require.jpg">
-<meta property="og:updated_time" content="2016-01-16T16:04:42.000Z">
+<meta property="og:description" content="12345678910//in typescriptvar list:any[];list[1]=“haha”;//error,list is undefined//in javascriptvar list;list[1]=2;//error,list is undefinedvar str；str=“sdljf”；//correct
+123456789101112//enum in types">
+<meta property="og:updated_time" content="2016-03-08T12:57:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs的require逻辑">
-<meta name="twitter:description">
+<meta name="twitter:title" content="typescript学习笔记">
+<meta name="twitter:description" content="12345678910//in typescriptvar list:any[];list[1]=“haha”;//error,list is undefined//in javascriptvar list;list[1]=2;//error,list is undefinedvar str；str=“sdljf”；//correct
+123456789101112//enum in types">
   
     <link rel="alternative" href="/atom.xml" title="点点飞" type="application/atom+xml">
   
@@ -192,11 +194,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-require-logic" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-some-mistakes-learning-typescript" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201510/require-logic/" class="article-date">
-  	<time datetime="2015-10-22T12:29:51.000Z" itemprop="datePublished">2015-10-22</time>
+      <a href="/201603/some-mistakes-learning-typescript/" class="article-date">
+  	<time datetime="2016-03-08T12:27:33.000Z" itemprop="datePublished">2016-03-08</time>
 </a>
     </div>
   
@@ -209,7 +211,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      nodejs的require逻辑
+      typescript学习笔记
     </h1>
   
 
@@ -218,7 +220,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/nodejs/">nodejs</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/typescript/">typescript</a></li></ul>
 	</div>
 
         
@@ -229,8 +231,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/../images/require.jpg" alt="require"></p>
-
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//in typescript</span></span><br><span class="line"><span class="keyword">var</span> list:any[];</span><br><span class="line">list[<span class="number">1</span>]=“haha”;<span class="comment">//error,list is undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//in javascript</span></span><br><span class="line"><span class="keyword">var</span> list;</span><br><span class="line">list[<span class="number">1</span>]=<span class="number">2</span>;<span class="comment">//error,list is undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str；</span><br><span class="line">str=“sdljf”；<span class="comment">//correct</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//enum in typescript</span></span><br><span class="line">enum Color&#123;</span><br><span class="line">	red=<span class="number">2</span>,</span><br><span class="line">	blue,</span><br><span class="line">	yellow,</span><br><span class="line">	grey=<span class="number">8</span>,</span><br><span class="line">	black</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Color.blue.toString());<span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(Color.black.toString());<span class="comment">//9</span></span><br><span class="line"><span class="built_in">console</span>.log(Color[<span class="number">4</span>]);<span class="comment">//yellow</span></span><br><span class="line"><span class="built_in">console</span>.log(Color[<span class="number">6</span>]);<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//super&amp;class in typescript</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;         </span><br><span class="line">	name: string;         </span><br><span class="line">	constructor(sname: string) &#123;<span class="keyword">this</span>.name = sname;&#125;; </span><br><span class="line">	moveBy(meters:number= <span class="number">5</span>)&#123;             </span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">" moved "</span> + meters + <span class="string">" m"</span>;  </span><br><span class="line">	&#125;     </span><br><span class="line">&#125;     </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Snake</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;         </span><br><span class="line">	constructor(name: string) &#123;<span class="keyword">super</span>(name);&#125; ;</span><br><span class="line"><span class="comment">//	moveBy(meters = 6) &#123; super.moveBy(meters); &#125; ; //error, no return</span></span><br><span class="line">	moveBy(meters = <span class="number">6</span>) &#123; <span class="keyword">return</span> <span class="keyword">super</span>.moveBy(meters); &#125; ;<span class="comment">//correct   </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -239,18 +242,9 @@
     
 <nav id="article-nav">
   
-    <a href="/201511/rem-responsive/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          rem实现响应式布局
-        
-      </div>
-    </a>
   
-  
-    <a href="/201509/js-jquery-ajax/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js与jquery的ajax请求</div>
+    <a href="/201603/the-new-beginning/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">放弃与成长</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -285,7 +279,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="require-logic" data-title="nodejs的require逻辑" data-url="http://antina.github.io/201510/require-logic/"></div>
+	<div class="ds-thread" data-thread-key="some-mistakes-learning-typescript" data-title="typescript学习笔记" data-url="http://antina.github.io/201603/some-mistakes-learning-typescript/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
