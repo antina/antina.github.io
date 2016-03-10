@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 15px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/typescript/" style="font-size: 10px;">typescript</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
+						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 17.5px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/less/" style="font-size: 10px;">less</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/typescript/" style="font-size: 10px;">typescript</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,66 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-img-center" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/201509/img-center/" class="article-date">
+  	<time datetime="2015-09-14T14:09:41.000Z" itemprop="datePublished">2015-09-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/201509/img-center/">实现图片水平垂直居中</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="u6C34_u5E73_u5C45_u4E2D"><a href="#u6C34_u5E73_u5C45_u4E2D" class="headerlink" title="水平居中"></a>水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">img</span><span class="rules">&#123;<span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;<span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> auto</span></span></span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u5782_u76F4_u5C45_u4E2D_u7528js_u5B9E_u73B0"><a href="#u5782_u76F4_u5C45_u4E2D_u7528js_u5B9E_u73B0" class="headerlink" title="垂直居中用js实现"></a>垂直居中用js实现</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv=<span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</span><br><span class="line"><span class="keyword">var</span> oImg=<span class="built_in">document</span>.getElementById(<span class="string">'img1'</span>);</span><br><span class="line"><span class="keyword">var</span> divHeight=oDiv.offsetHeight;</span><br><span class="line"><span class="keyword">var</span> imgHeight=oImg.offsetHeight;</span><br><span class="line">oImg.style.marginTop=(divHeight-imgHeight)/<span class="number">2</span>+<span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="u5782_u76F4_u5C45_u4E2D_u7528css_u5B9E_u73B0_u65B9_u6CD5_u4E00"><a href="#u5782_u76F4_u5C45_u4E2D_u7528css_u5B9E_u73B0_u65B9_u6CD5_u4E00" class="headerlink" title="垂直居中用css实现方法一"></a>垂直居中用css实现方法一</h3><p>.box{display:table-cell; verticle-align:middle;}</p>
+<h3 id="u5782_u76F4_u5C45_u4E2D_u7528css_u5B9E_u73B0_u65B9_u6CD5_u4E8C"><a href="#u5782_u76F4_u5C45_u4E2D_u7528css_u5B9E_u73B0_u65B9_u6CD5_u4E8C" class="headerlink" title="垂直居中用css实现方法二"></a>垂直居中用css实现方法二</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.box</span><span class="rules">&#123;<span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>;&#125;</span></span><br><span class="line"><span class="class">.img</span><span class="rules">&#123;<span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;<span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50%</span></span></span>;<span class="rule"><span class="attribute">transform</span>:<span class="value"><span class="function">translateY</span>(-<span class="number">50%</span>)</span></span>;&#125;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/css/">css</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-onload-Jquery_ready-diff" class="article article-type-post" itemscope itemprop="blogPost">
   
