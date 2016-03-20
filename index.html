@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 17.5px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12.5px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 15px;">js</a> <a href="/tagsavatar/less/" style="font-size: 10px;">less</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/typescript/" style="font-size: 10px;">typescript</a> <a href="/tagsavatar/随笔/" style="font-size: 17.5px;">随笔</a>
+						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/css/" style="font-size: 16.67px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 13.33px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 16.67px;">js</a> <a href="/tagsavatar/less/" style="font-size: 10px;">less</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/typescript/" style="font-size: 10px;">typescript</a> <a href="/tagsavatar/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,69 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-ES6-Promise" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/201603/ES6-Promise/" class="article-date">
+  	<time datetime="2016-03-19T07:58:37.000Z" itemprop="datePublished">2016-03-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/201603/ES6-Promise/">ES6 Promise常用方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Promise 是一个构造函数，有all，reject，resolve等方法，原型链上还有then，catch等方法<br><img src="/../images/promise.png" alt="Promise"></p>
+<p>Promise的构造函数接收一个函数参数。函数含两个参：resolve和reject，resolve将Promise的<strong>状态</strong>变为fullfiled并返回数据，reject将Promise状态变为rejected并返回相应信息。<br>then接收两个参数，第一个对应resolve的回调，第二个对应reject的回调，例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="string">'1done'</span>);</span><br><span class="line">    		<span class="keyword">var</span> aa=<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</span><br><span class="line">    		<span class="keyword">if</span>(aa&gt;<span class="number">5</span>) resolve(<span class="string">'1data'</span>);</span><br><span class="line">    		<span class="keyword">else</span> reject(<span class="string">'1data rejected'</span>);</span><br><span class="line">    	&#125;,<span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line">runSync1().then(</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'resolved '</span>+data); <span class="comment">//resolved 1data</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'rejected '</span>+data); <span class="comment">//rejected 1data rejected</span></span><br><span class="line">	&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>链式调用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="string">'1done'</span>);</span><br><span class="line">    		resolve(<span class="string">'1data'</span>);</span><br><span class="line">    	&#125;,<span class="number">2000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,rejest</span>)</span>&#123;</span><br><span class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="string">'2done'</span>);</span><br><span class="line">    		resolve(<span class="string">'2data'</span>);</span><br><span class="line">    	&#125;,<span class="number">2000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,rejest</span>)</span>&#123;</span><br><span class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="string">'3done'</span>);</span><br><span class="line">    		resolve(<span class="string">'3data'</span>);</span><br><span class="line">    	&#125;,<span class="number">2000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line">runSync1().then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data);</span><br><span class="line">	<span class="keyword">return</span> runSync2();</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data);</span><br><span class="line">	<span class="keyword">return</span> runSync3();</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 1done</span></span><br><span class="line"><span class="comment">// 1data</span></span><br><span class="line"><span class="comment">// 2done</span></span><br><span class="line"><span class="comment">// 2data</span></span><br><span class="line"><span class="comment">// 3done</span></span><br><span class="line"><span class="comment">// 3data</span></span><br></pre></td></tr></table></figure></p>
+<p>catch方法与then的第二个参数类似，用于指定reject的回调<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="string">'1done'</span>);</span><br><span class="line">    		<span class="keyword">var</span> aa=<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</span><br><span class="line">    		<span class="keyword">if</span>(aa&gt;<span class="number">5</span>) resolve(<span class="string">'1data'</span>);</span><br><span class="line">    		<span class="keyword">else</span> reject(<span class="string">'1data rejected'</span>);</span><br><span class="line">    	&#125;,<span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line">runSync1().then(</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'resolved '</span>+data); <span class="comment">//resolved 1data</span></span><br><span class="line">	&#125;)</span><br><span class="line">	.catch(</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'rejected '</span>+data); <span class="comment">//rejected 1data rejected</span></span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这样写有另外一个作用，若执行resolve的回调抛出异常的话，并不会报错卡死js而会进入catch中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="string">'1done'</span>);</span><br><span class="line">    		<span class="keyword">var</span> aa=<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</span><br><span class="line">    		<span class="keyword">if</span>(aa&gt;<span class="number">5</span>) resolve(<span class="string">'1data'</span>);</span><br><span class="line">    		<span class="keyword">else</span> reject(<span class="string">'1data rejected'</span>);</span><br><span class="line">    	&#125;,<span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line">runSync1().then(</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'resolved '</span>+data); </span><br><span class="line">		<span class="built_in">console</span>.log(unknowndata);<span class="comment">//未定义</span></span><br><span class="line">	&#125;)</span><br><span class="line">	.catch(</span><br><span class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'rejected'</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(data); </span><br><span class="line">	&#125;);</span><br><span class="line"><span class="comment">// resolved 1data</span></span><br><span class="line"><span class="comment">// rejected</span></span><br><span class="line"><span class="comment">// ReferenceError: unknowndata is not defined..</span></span><br></pre></td></tr></table></figure></p>
+<p>all接收一个数组参数，里面的值都返回promise对象，它们都执行完成后才进入then里面，返回的数据放进一个数组中传给then<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([runSync1(), runSync2(),runSync3()]).then(<span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(results);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 1done</span></span><br><span class="line"><span class="comment">// 2done</span></span><br><span class="line"><span class="comment">// 3done</span></span><br><span class="line"><span class="comment">// // ['1data', '2data', '3data']</span></span><br></pre></td></tr></table></figure></p>
+<p>race是“谁跑得快，以谁为准执行回调”，将上面的runSync2的定时器设为1秒，则：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.race([runSync1(), runSync2(),runSync3()]).then(<span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(results);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2done</span></span><br><span class="line"><span class="comment">// 2data</span></span><br><span class="line"><span class="comment">// 1done</span></span><br><span class="line"><span class="comment">// 3done</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-less-demo" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -672,62 +735,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mutation</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i=<span class="number">0</span>,str1=arr[<span class="number">0</span>].toLowerCase(),str2=arr[<span class="number">1</span>].toLowerCase();</span><br><span class="line">  <span class="keyword">while</span>(i&lt;arr[<span class="number">1</span>].length)&#123;</span><br><span class="line">    <span class="keyword">if</span>(str1.indexOf(str2[i])!==-<span class="number">1</span>)&#123;</span><br><span class="line">      i++;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">mutation([<span class="string">"hello"</span>, <span class="string">"hey"</span>]);</span><br><span class="line">mutation([<span class="string">"hello"</span>, <span class="string">"Hello"</span>]) ;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/FreeCodeCamp/">FreeCodeCamp</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-FCC-repeat-a-string" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/201601/FCC-repeat-a-string/" class="article-date">
-  	<time datetime="2016-01-25T10:28:12.000Z" itemprop="datePublished">2016-01-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/201601/FCC-repeat-a-string/">Repeat a string</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">str, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arr=[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num;i++)&#123;</span><br><span class="line">    arr[i]=str;</span><br><span class="line">  &#125;</span><br><span class="line">  str=arr.join(<span class="string">''</span>);</span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repeat(<span class="string">"abc"</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     
