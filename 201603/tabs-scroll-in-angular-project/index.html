@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Chunky Monkey | 点点飞</title>
+  <title>angular项目中tabs下的scroll问题实践 | 点点飞</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011function chunk(arr, size) &amp;#123;  var newArr=[];  var i = 0;  while(i&amp;lt;arr.length/size)&amp;#123;      newArr.push(arr.slice(size*i,size*(i+1)));      i++;    &amp;#125;  return newArr;&amp;#125;ch">
+  <meta name="description" content="问题描述：angular项目中几个不同的tab共用同一个固定高度的container，各个tab中的内容由ng-inlude提供，是否显示由ng-if或者ng-show实现，由于各个tab内容量不同，在tab间切换时会造成scroll混乱。解决方法：123456789101112131415//参数，selectedTab：tab的索引，0,1,2..，tabsScrollTop：各个索引下scr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chunky Monkey">
-<meta property="og:url" content="http://antina.github.io/201601/FCC-chunky-monkey/index.html">
+<meta property="og:title" content="angular项目中tabs下的scroll问题实践">
+<meta property="og:url" content="http://antina.github.io/201603/tabs-scroll-in-angular-project/index.html">
 <meta property="og:site_name" content="点点飞">
-<meta property="og:description" content="1234567891011function chunk(arr, size) &amp;#123;  var newArr=[];  var i = 0;  while(i&amp;lt;arr.length/size)&amp;#123;      newArr.push(arr.slice(size*i,size*(i+1)));      i++;    &amp;#125;  return newArr;&amp;#125;ch">
-<meta property="og:updated_time" content="2016-02-03T09:32:25.000Z">
+<meta property="og:description" content="问题描述：angular项目中几个不同的tab共用同一个固定高度的container，各个tab中的内容由ng-inlude提供，是否显示由ng-if或者ng-show实现，由于各个tab内容量不同，在tab间切换时会造成scroll混乱。解决方法：123456789101112131415//参数，selectedTab：tab的索引，0,1,2..，tabsScrollTop：各个索引下scr">
+<meta property="og:updated_time" content="2016-05-08T13:39:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chunky Monkey">
-<meta name="twitter:description" content="1234567891011function chunk(arr, size) &amp;#123;  var newArr=[];  var i = 0;  while(i&amp;lt;arr.length/size)&amp;#123;      newArr.push(arr.slice(size*i,size*(i+1)));      i++;    &amp;#125;  return newArr;&amp;#125;ch">
+<meta name="twitter:title" content="angular项目中tabs下的scroll问题实践">
+<meta name="twitter:description" content="问题描述：angular项目中几个不同的tab共用同一个固定高度的container，各个tab中的内容由ng-inlude提供，是否显示由ng-if或者ng-show实现，由于各个tab内容量不同，在tab间切换时会造成scroll混乱。解决方法：123456789101112131415//参数，selectedTab：tab的索引，0,1,2..，tabsScrollTop：各个索引下scr">
   
     <link rel="alternative" href="/atom.xml" title="点点飞" type="application/atom+xml">
   
@@ -191,11 +191,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-FCC-chunky-monkey" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-tabs-scroll-in-angular-project" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201601/FCC-chunky-monkey/" class="article-date">
-  	<time datetime="2016-01-25T10:28:12.000Z" itemprop="datePublished">2016-01-25</time>
+      <a href="/201603/tabs-scroll-in-angular-project/" class="article-date">
+  	<time datetime="2016-03-28T06:39:43.000Z" itemprop="datePublished">2016-03-28</time>
 </a>
     </div>
   
@@ -208,7 +208,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Chunky Monkey
+      angular项目中tabs下的scroll问题实践
     </h1>
   
 
@@ -217,7 +217,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/FreeCodeCamp/">FreeCodeCamp</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/angularjs/">angularjs</a></li></ul>
 	</div>
 
         
@@ -228,7 +228,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunk</span>(<span class="params">arr, size</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> newArr=[];</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(i&lt;arr.length/size)&#123;</span><br><span class="line">      newArr.push(arr.slice(size*i,size*(i+<span class="number">1</span>)));</span><br><span class="line">      i++;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">chunk([<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>], <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+        <p>问题描述：angular项目中几个不同的tab共用同一个固定高度的container，各个tab中的内容由ng-inlude提供，是否显示由ng-if或者ng-show实现，由于各个tab内容量不同，在tab间切换时会造成scroll混乱。<br>解决方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//参数，selectedTab：tab的索引，0,1,2..，tabsScrollTop：各个索引下scrollbar的位置</span></span><br><span class="line">selectedTab: number; </span><br><span class="line">tabsScrollTop: number[]; </span><br><span class="line"><span class="comment">//点击tab时，执行selectTab(tabIndex),</span></span><br><span class="line">selectTab(tabIndex: number) &#123;</span><br><span class="line">	<span class="comment">//得到当前索引下scrollbar的位置并储存</span></span><br><span class="line">    <span class="keyword">this</span>.tabsScrollTop[<span class="keyword">this</span>.selectedTab] = $(<span class="string">"#classroomLeftPageContent"</span>).scrollTop(); </span><br><span class="line">    <span class="comment">//切换到这个tab，加载这个tab的内容</span></span><br><span class="line">    <span class="keyword">this</span>.selectedTab = tabIndex; </span><br><span class="line">    <span class="comment">//等待当前dom加载完成后执行</span></span><br><span class="line">    <span class="keyword">this</span>.$timeout(() =&gt; &#123;</span><br><span class="line">    	<span class="comment">//将scrollbar位置定位到该索引下上一次的位置</span></span><br><span class="line">        $(<span class="string">"#classroomLeftPageContent"</span>).scrollTop(<span class="keyword">this</span>.tabsScrollTop[tabIndex]); </span><br><span class="line">        &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -237,18 +238,9 @@
     
 <nav id="article-nav">
   
-    <a href="/201601/FCC-check-for-palindromes/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Check for Palindromes
-        
-      </div>
-    </a>
   
-  
-    <a href="/201601/FCC-title-case-a-sentence/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Title Case a Sentence</div>
+    <a href="/201603/ES6-Promise/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6 Promise常用方法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -283,7 +275,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="FCC-chunky-monkey" data-title="Chunky Monkey" data-url="http://antina.github.io/201601/FCC-chunky-monkey/"></div>
+	<div class="ds-thread" data-thread-key="tabs-scroll-in-angular-project" data-title="angular项目中tabs下的scroll问题实践" data-url="http://antina.github.io/201603/tabs-scroll-in-angular-project/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
