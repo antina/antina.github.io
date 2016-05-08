@@ -597,10 +597,10 @@
 
 
   
-    <article id="post-FCC-truncate-a-string" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-FCC-chunky-monkey" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201601/FCC-truncate-a-string/" class="article-date">
+      <a href="/201601/FCC-chunky-monkey/" class="article-date">
   	<time datetime="2016-01-25T10:28:12.000Z" itemprop="datePublished">2016-01-25</time>
 </a>
     </div>
@@ -614,7 +614,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/201601/FCC-truncate-a-string/">Truncate a string</a>
+      <a class="article-title" href="/201601/FCC-chunky-monkey/">Chunky Monkey</a>
     </h1>
   
 
@@ -623,7 +623,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">truncate</span>(<span class="params">str, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(str.length&gt;num)&#123;</span><br><span class="line">      <span class="keyword">if</span>(num&gt;<span class="number">3</span>)&#123;</span><br><span class="line">          str=str.slice(<span class="number">0</span>,num<span class="number">-3</span>)+<span class="string">'...'</span>;</span><br><span class="line">        </span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          str=str.slice(<span class="number">0</span>,num)+<span class="string">'...'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> str;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">truncate(<span class="string">"A-tisket a-tasket A green and yellow basket"</span>, <span class="number">11</span>);</span><br></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">chunk</span>(<span class="params">arr, size</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> newArr=[];</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(i&lt;arr.length/size)&#123;</span><br><span class="line">      newArr.push(arr.slice(size*i,size*(i+<span class="number">1</span>)));</span><br><span class="line">      i++;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">chunk([<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>], <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -709,10 +709,10 @@
 
 
   
-    <article id="post-FCC-conferm-the-ending" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-FCC-repeat-a-string" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201601/FCC-conferm-the-ending/" class="article-date">
+      <a href="/201601/FCC-repeat-a-string/" class="article-date">
   	<time datetime="2016-01-25T10:28:12.000Z" itemprop="datePublished">2016-01-25</time>
 </a>
     </div>
@@ -726,7 +726,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/201601/FCC-conferm-the-ending/">Confirm the Ending</a>
+      <a class="article-title" href="/201601/FCC-repeat-a-string/">Repeat a string</a>
     </h1>
   
 
@@ -735,7 +735,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">end</span>(<span class="params">str, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(str.substr(str.length-target.length,str.length)===target)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">end(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</span><br></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">str, num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arr=[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num;i++)&#123;</span><br><span class="line">    arr[i]=str;</span><br><span class="line">  &#125;</span><br><span class="line">  str=arr.join(<span class="string">''</span>);</span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">repeat(<span class="string">"abc"</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     
