@@ -545,10 +545,67 @@
 
 
   
-    <article id="post-diff-two-arrays" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-FCC-Where-art-thou" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/201602/diff-two-arrays/" class="article-date">
+      <a href="/201602/FCC-Where-art-thou/" class="article-date">
+  	<time datetime="2016-02-04T03:38:33.000Z" itemprop="datePublished">2016-02-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/201602/FCC-Where-art-thou/">Where art thou</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">whereAreYou</span>(<span class="params">collection, source</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> arr = [];</span><br><span class="line">  <span class="keyword">var</span> keys=<span class="built_in">Object</span>.keys(source);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;collection.length;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> hasKeys=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">var</span> tempKeys=<span class="built_in">Object</span>.keys(collection[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;keys.length;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(tempKeys.indexOf(keys[j])&lt;<span class="number">0</span>)&#123;</span><br><span class="line">        hasKeys=<span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(hasKeys)&#123;</span><br><span class="line">      <span class="keyword">var</span> sameValues=<span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> k=<span class="number">0</span>; k&lt;keys.length;k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(source[keys[k]]!==collection[i][keys[k]])&#123;</span><br><span class="line">          sameValues=<span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(sameValues)&#123;</span><br><span class="line">        arr.push(collection[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">whereAreYou([&#123; first: <span class="string">"Romeo"</span>, last: <span class="string">"Montague"</span> &#125;, &#123; first: <span class="string">"Mercutio"</span>, last: <span class="literal">null</span> &#125;, &#123; first: <span class="string">"Tybalt"</span>, last: <span class="string">"Capulet"</span> &#125;], &#123; last: <span class="string">"Capulet"</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/FreeCodeCamp/">FreeCodeCamp</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-FCC-diff-two-arrays" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/201602/FCC-diff-two-arrays/" class="article-date">
   	<time datetime="2016-02-03T11:24:09.000Z" itemprop="datePublished">2016-02-03</time>
 </a>
     </div>
@@ -562,7 +619,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/201602/diff-two-arrays/">Diff Two Arrays</a>
+      <a class="article-title" href="/201602/FCC-diff-two-arrays/">Diff Two Arrays</a>
     </h1>
   
 
@@ -685,62 +742,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">where</span>(<span class="params">arr, num</span>) </span>&#123;</span><br><span class="line">    arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> a-b;</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">var</span> j=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(num&gt;arr[i])&#123;</span><br><span class="line">      j=i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">where([<span class="number">40</span>, <span class="number">60</span>], <span class="number">50</span>);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/FreeCodeCamp/">FreeCodeCamp</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-FCC-conferm-the-ending" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/201601/FCC-conferm-the-ending/" class="article-date">
-  	<time datetime="2016-01-25T10:28:12.000Z" itemprop="datePublished">2016-01-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/201601/FCC-conferm-the-ending/">Confirm the Ending</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">end</span>(<span class="params">str, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(str.substr(str.length-target.length,str.length)===target)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">end(<span class="string">"Bastian"</span>, <span class="string">"n"</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     
