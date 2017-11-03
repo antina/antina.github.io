@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>ES6 Promise常用方法 | 点点飞</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Promise 是一个构造函数，有all，reject，resolve等方法，原型链上还有then，catch等方法 Promise的构造函数接收一个函数参数。函数含两个参：resolve和reject，resolve将Promise的状态变为fullfiled并返回数据，reject将Promise状态变为rejected并返回相应信息。then接收两个参数，第一个对应resolve的回调，第二">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6 Promise常用方法">
+<meta property="og:url" content="http://antina.github.io/201603/ES6-Promise/index.html">
+<meta property="og:site_name" content="点点飞">
+<meta property="og:description" content="Promise 是一个构造函数，有all，reject，resolve等方法，原型链上还有then，catch等方法 Promise的构造函数接收一个函数参数。函数含两个参：resolve和reject，resolve将Promise的状态变为fullfiled并返回数据，reject将Promise状态变为rejected并返回相应信息。then接收两个参数，第一个对应resolve的回调，第二">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://antina.github.io/201603/images/promise.png">
+<meta property="og:updated_time" content="2016-03-20T08:56:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6 Promise常用方法">
+<meta name="twitter:description" content="Promise 是一个构造函数，有all，reject，resolve等方法，原型链上还有then，catch等方法 Promise的构造函数接收一个函数参数。函数含两个参：resolve和reject，resolve将Promise的状态变为fullfiled并返回数据，reject将Promise状态变为rejected并返回相应信息。then接收两个参数，第一个对应resolve的回调，第二">
+<meta name="twitter:image" content="http://antina.github.io/201603/images/promise.png">
+  
+    <link rel="alternative" href="/atom.xml" title="点点飞" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"><canvas id="clock" height="60" width="220"></canvas></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Antina</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">原力觉醒piu</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tagsavatar/FreeCodeCamp/" style="font-size: 20px;">FreeCodeCamp</a> <a href="/tagsavatar/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tagsavatar/css/" style="font-size: 16px;">css</a> <a href="/tagsavatar/html5/" style="font-size: 10px;">html5</a> <a href="/tagsavatar/jquery/" style="font-size: 12px;">jquery</a> <a href="/tagsavatar/js/" style="font-size: 18px;">js</a> <a href="/tagsavatar/less/" style="font-size: 10px;">less</a> <a href="/tagsavatar/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tagsavatar/sass/" style="font-size: 10px;">sass</a> <a href="/tagsavatar/typescript/" style="font-size: 10px;">typescript</a> <a href="/tagsavatar/随笔/" style="font-size: 14px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://askender.com/">askender</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">完美主义，创意无限，节操满格，习惯性开挂，战斗力爆表，脑洞如黑洞...我这么厉害咋还没上天呢</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Antina</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Antina</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">原力觉醒piu</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-ES6-Promise" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/201603/ES6-Promise/" class="article-date">
+  	<time datetime="2016-03-19T07:58:37.000Z" itemprop="datePublished">2016-03-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ES6 Promise常用方法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tagsavatar/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Promise 是一个构造函数，有all，reject，resolve等方法，原型链上还有then，catch等方法<br><img src="../images/promise.png" alt="Promise"></p>
+<p>Promise的构造函数接收一个函数参数。函数含两个参：resolve和reject，resolve将Promise的<strong>状态</strong>变为fullfiled并返回数据，reject将Promise状态变为rejected并返回相应信息。<br>then接收两个参数，第一个对应resolve的回调，第二个对应reject的回调，例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    		<span class="built_in">console</span>.log(<span class="string">'1done'</span>);</div><div class="line">    		<span class="keyword">var</span> aa=<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">    		<span class="keyword">if</span>(aa&gt;<span class="number">5</span>) resolve(<span class="string">'1data'</span>);</div><div class="line">    		<span class="keyword">else</span> reject(<span class="string">'1data rejected'</span>);</div><div class="line">    	&#125;,<span class="number">1000</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> p;</div><div class="line">&#125;</div><div class="line">runSync1().then(</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'resolved '</span>+data); <span class="comment">//resolved 1data</span></div><div class="line">	&#125;,</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'rejected '</span>+data); <span class="comment">//rejected 1data rejected</span></div><div class="line">	&#125;</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<p>链式调用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    		<span class="built_in">console</span>.log(<span class="string">'1done'</span>);</div><div class="line">    		resolve(<span class="string">'1data'</span>);</div><div class="line">    	&#125;,<span class="number">2000</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> p;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,rejest</span>)</span>&#123;</div><div class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    		<span class="built_in">console</span>.log(<span class="string">'2done'</span>);</div><div class="line">    		resolve(<span class="string">'2data'</span>);</div><div class="line">    	&#125;,<span class="number">2000</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> p;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync3</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,rejest</span>)</span>&#123;</div><div class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    		<span class="built_in">console</span>.log(<span class="string">'3done'</span>);</div><div class="line">    		resolve(<span class="string">'3data'</span>);</div><div class="line">    	&#125;,<span class="number">2000</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> p;</div><div class="line">&#125;</div><div class="line">runSync1().then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(data);</div><div class="line">	<span class="keyword">return</span> runSync2();</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(data);</div><div class="line">	<span class="keyword">return</span> runSync3();</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(data);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 1done</span></div><div class="line"><span class="comment">// 1data</span></div><div class="line"><span class="comment">// 2done</span></div><div class="line"><span class="comment">// 2data</span></div><div class="line"><span class="comment">// 3done</span></div><div class="line"><span class="comment">// 3data</span></div></pre></td></tr></table></figure></p>
+<p>catch方法与then的第二个参数类似，用于指定reject的回调<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    		<span class="built_in">console</span>.log(<span class="string">'1done'</span>);</div><div class="line">    		<span class="keyword">var</span> aa=<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">    		<span class="keyword">if</span>(aa&gt;<span class="number">5</span>) resolve(<span class="string">'1data'</span>);</div><div class="line">    		<span class="keyword">else</span> reject(<span class="string">'1data rejected'</span>);</div><div class="line">    	&#125;,<span class="number">1000</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> p;</div><div class="line">&#125;</div><div class="line">runSync1().then(</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'resolved '</span>+data); <span class="comment">//resolved 1data</span></div><div class="line">	&#125;)</div><div class="line">	.catch(</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'rejected '</span>+data); <span class="comment">//rejected 1data rejected</span></div><div class="line">	&#125;);</div></pre></td></tr></table></figure></p>
+<p>这样写有另外一个作用，若执行resolve的回调抛出异常的话，并不会报错卡死js而会进入catch中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">runSync1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line">    	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    		<span class="built_in">console</span>.log(<span class="string">'1done'</span>);</div><div class="line">    		<span class="keyword">var</span> aa=<span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">    		<span class="keyword">if</span>(aa&gt;<span class="number">5</span>) resolve(<span class="string">'1data'</span>);</div><div class="line">    		<span class="keyword">else</span> reject(<span class="string">'1data rejected'</span>);</div><div class="line">    	&#125;,<span class="number">1000</span>);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> p;</div><div class="line">&#125;</div><div class="line">runSync1().then(</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'resolved '</span>+data); </div><div class="line">		<span class="built_in">console</span>.log(unknowndata);<span class="comment">//未定义</span></div><div class="line">	&#125;)</div><div class="line">	.catch(</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'rejected'</span>);</div><div class="line">		<span class="built_in">console</span>.log(data); </div><div class="line">	&#125;);</div><div class="line"><span class="comment">// resolved 1data</span></div><div class="line"><span class="comment">// rejected</span></div><div class="line"><span class="comment">// ReferenceError: unknowndata is not defined..</span></div></pre></td></tr></table></figure></p>
+<p>all接收一个数组参数，里面的值都返回promise对象，它们都执行完成后才进入then里面，返回的数据放进一个数组中传给then<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Promise</span>.all([runSync1(), runSync2(),runSync3()]).then(<span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(results);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 1done</span></div><div class="line"><span class="comment">// 2done</span></div><div class="line"><span class="comment">// 3done</span></div><div class="line"><span class="comment">// // ['1data', '2data', '3data']</span></div></pre></td></tr></table></figure></p>
+<p>race是“谁跑得快，以谁为准执行回调”，将上面的runSync2的定时器设为1秒，则：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Promise</span>.race([runSync1(), runSync2(),runSync3()]).then(<span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(results);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 2done</span></div><div class="line"><span class="comment">// 2data</span></div><div class="line"><span class="comment">// 1done</span></div><div class="line"><span class="comment">// 3done</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/201603/tabs-scroll-in-angular-project/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          angular项目中tabs下的scroll问题实践
+        
+      </div>
+    </a>
+  
+  
+    <a href="/201603/less-demo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Less使用demo</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ES6-Promise" data-title="ES6 Promise常用方法" data-url="http://antina.github.io/201603/ES6-Promise/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Antina
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/clock.js"></script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
